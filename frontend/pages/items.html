@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIPHER-EDU | Boshqaruv paneli</title>
+  {% include 'detailes/links.html' %}
+</head>
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+  {% include 'detailes/sidebar.html' %}
+  <div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">CIPHER-EDU</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}">Bosh sahifa</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--carts start-->
+<form action = "" method = "post">
+ 
+
+ <div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-title">Mijozni ro‘yxatdan o‘tkazish</h3>
+  </div>
+  <div class="card-body"><br> {% csrf_token %}
+    <div class="row">
+      <div class="col-12">
+        <label>Mijozni ismini kiriting:</label>
+       
+        <!-- {{form}} -->
+        
+        {{form.client_name }}
+        
+      </div>
+        <div class=" col-4">
+          <label>Mijoz telefon kiriting:</label>
+          {{form.client_phonenumber }}
+        </div>
+        <div class=" col-4">
+          <label>Mijozni qabul qilgan hodim:</label>
+         {{form.ovner }}
+        </div>
+         <div class=" col-4">
+          <label></label>
+          <input type="submit" value="Saqlash" class="btn btn-block btn-success btn-lg" >
+        </div>
+    </div>
+    
+  </div>
+</div> </form>
+
+{% include 'detailes/carts.html' %}
+  </div>
+  <aside class="control-sidebar control-sidebar-dark">
+  </aside>
+{% include 'detailes/footer.html'  %}
+</div>
+{% include 'detailes/scripts.html'  %}
+</body>
+</html>
